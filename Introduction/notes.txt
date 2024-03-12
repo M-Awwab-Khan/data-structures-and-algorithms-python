@@ -1,0 +1,31 @@
+1.Data Structure: different ways of organizing data on your computer, that cam be used effectively.
+    1.1. Primitive Data Structures:
+        - int
+        - float
+        - str
+        - bool
+    1.2. Non-Primitive Data Structures:
+        1.2.1. Linear DS: arranged in a sequential order:
+            - list, tuple, array, linked list, stack, queue
+        1.2.2. Non-Linear DS: hierarchical relation
+            - set, dictionary, tree, graph
+2.Algorithm: set of steps to complete a task
+    - in CS: a set of rules for a computer program to accomplish a task
+        input data --> calculation --> stop when the answer is found
+    2.1. Types of Algorithms:
+        - sorting - to sort data in ASC or DESC order
+        - search - find a specific value in a data set
+        - graph - work with data that can be represented as a graph
+        - dynamic programming - to solve problems by breaking them down into smaller sub-problems
+        - divide and conquer - to solve problems by breaking them down into smaller sub-problems, solving each
+            sub-problem independently, and them combining the results
+        - recursive - to solve problems by breaking them down into smaller sub-problems that are similar in nature
+3.Quiz:
+    3.1. Why do we need DS and algorithms?
+        - to develop memory and time efficient applications
+    3.2. What is primitive DS?
+        - built in DS in any given programming language
+    3.3. Please select non-primitive DS.
+        - array
+    3.4. Which of the following is NOT a linear DS?
+        - tree
