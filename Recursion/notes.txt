@@ -1,0 +1,30 @@
+1.Recursion - a way of solving a problem by having a function calling itself
+    - can generally be solved by iteration
+    - example: Russian Doll
+    - performing the same operation multiple times with different inputs
+    - in every step, we try smaller inputs to make the problem smaller
+    - base condition is needed to stop the recursion, otherwise infinite loop will occur
+
+    def open_russian_doll(doll):
+        if doll == 1:
+            print('All dolls are opened')
+        else:
+            open_russian_doll(doll-1)
+
+    1.1.why recursion:
+        - recursive thinking helps break down big problems into small ones and easier to use
+        - recursive code is easier to write than loops
+        - used in data structures like trees and graphs
+
+    def recursion_method(params):
+        if exit from condition satisfied:
+            return some value
+        else:
+            recursion_method(modified params)
+
+2.                      Recursion  vs.  Iteration:
+- Space efficient           No           Yes            - No stack memory require in case of iteration
+- Time efficient            No           Yes            - In case of recursion system needs more time for pop and push
+                                                          elements to stack memory which makes recursion less time efficient
+- Easy to Code              Yes          No             - use recursion especially when we know that the problem can be
+                                                          divided into similar sub problems
