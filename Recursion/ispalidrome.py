@@ -1,10 +1,10 @@
 def ispalidrome(x: str) -> bool:
-    for i in range(len(x)):
-        if x[i] == x[len(x) - i - 1]:
-            ispalidrome(x[i + 1:len(x) - i - 1])
-            return True
-        else:
-            return False
+    if len(x) == 1:
+        return True
+    if x[0] == x[-1]:
+        return ispalidrome(x[1:-1])
+    else:
+        return False
     
 
 print(ispalidrome('level'))
