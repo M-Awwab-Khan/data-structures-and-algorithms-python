@@ -1,4 +1,4 @@
-def flatten(arr):
+def flatten(arr: list) -> list:
     flattened = []
     for i in arr:
         if type(i) != list:
