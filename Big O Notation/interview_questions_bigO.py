@@ -24,3 +24,15 @@ def printUnorderedPairs(array):
     for i in range(0,len(array)):
         for j in range(i+1,len(array)):
             print(array[i] + "," + array[j])
+
+
+#Question4 - O(ab)
+def printUnorderedPairs(arrayA, arrayB):
+    for i in range(len(arrayA)):
+        for j in range(len(arrayB)):
+            if arrayA[i] < arrayB[j]:
+                print(str(arrayA[i]) + "," + str(arrayB[j]))
+
+arrayA = [1,2,3,4,5]
+arrayB = [2,6,7,8]
+
