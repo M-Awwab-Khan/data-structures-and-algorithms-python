@@ -68,3 +68,18 @@ def factorial(n):
         return n * factorial(n-1)
 
 print(factorial(3))
+
+#Question9 - O(2^n)
+def allFib(n):
+    for i in range(n):
+        print(str(i)+":, " + str(fib(i)))
+
+def fib(n):
+    if n <= 0:
+        return 0
+    elif n == 1:
+        return 1
+    return fib(n-1) + fib(n-2)
+
+
+allFib(4)
