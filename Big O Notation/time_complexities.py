@@ -77,3 +77,47 @@ def f(n):
     return f(n-1) + f(n-1)
 
 print(f(3))
+
+
+######  Quiz Questions ####### 
+
+###### O(n)
+def f1(n):
+    if n <= 0:
+        return 1
+    else:
+        return 1 + f1(n-1)
+
+
+###### O(n)
+def f2(n):
+    
+    if n <= 0:
+        return 1
+    else:
+        return 1 + f2(n-5)
+
+###### O(log n)
+def f3(n):
+    if n <= 0:
+        return 1
+    else:
+        return 1 + f3(n/5)
+
+###### O(2^n)
+def f4(n,m,o):
+    if n<=0:
+        print(n,m,o)
+    else:
+        f4(n-1,m+1,o)
+        f4(n-1,m,o+1)
+
+###### O(n)
+def f5(n):
+    for i in range(0,n,2):
+        print(i)  
+    if n<=0:
+        return 1
+    else:
+        return 1 + f5(n-5)
+
