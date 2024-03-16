@@ -17,3 +17,10 @@ def printPairs(array):
     for i in array:
         for j in array:
             print(str(i)+","+str(j))
+
+
+#Question3 - O(n^2)
+def printUnorderedPairs(array):
+    for i in range(0,len(array)):
+        for j in range(i+1,len(array)):
+            print(array[i] + "," + array[j])
