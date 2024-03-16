@@ -30,3 +30,18 @@ def fibonacci(n):
     if n <= 1:
         return n
     return fibonacci(n-1) + fibonacci(n-2)
+
+
+######  Add vs Multiply ####### 
+arrayA = [1,2,3,4,5,6,7,8,9]
+arrayB = [11,12,13,14,15,16,17,18,19] 
+
+for a in arrayA:
+    print(a)
+
+for b in arrayB:
+    print(b)
+
+for a in arrayA:
+    for b in arrayB:
+        print(a,b)
