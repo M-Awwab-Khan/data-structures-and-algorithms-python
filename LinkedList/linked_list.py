@@ -19,4 +19,12 @@ class LinkedList:
             self.tail = self.head
             self.size = 1
 
-
+    def prepend(self, node: Node) -> None:
+        if self.head:
+            node.next = self.head
+            self.head = node
+            self.size += 1
+        else:
+            self.head = node
+            self.tail = self.head
+            self.length = 1
