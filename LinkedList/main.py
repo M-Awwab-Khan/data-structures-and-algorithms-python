@@ -11,3 +11,6 @@ lst.append(6)
 lst.prepend(0)
 print(lst)
 print(len(lst))
+
+lst.insert(3, -1)
+print(lst)
