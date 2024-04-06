@@ -28,3 +28,13 @@ class LinkedList:
             self.head = node
             self.tail = self.head
             self.length = 1
+
+    def __str__(self):
+        print('LinkedList([', end='')
+        if self.head:
+            current_node = self.head
+            while current_node:
+                print(current_node.data, end=', ')
+                current_node = current_node.next
+
+        print('])')
