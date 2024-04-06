@@ -31,6 +31,25 @@ class LinkedList:
             self.tail = self.head
             self.length = 1
 
+    def insert(self, position, data) -> None:
+        new_node = Node(data)
+        if position > self.size:
+            print('Position out of bound')
+
+        elif position == self.size:
+            self.append(data)
+
+        elif position == 0:
+            self.prepend(data)
+
+        else:
+            current_node = self.head
+            for i in range(position-1):
+                current_node = current_node.next
+            new_node.next = current_node.next
+            current_node.next = new_node
+            self.size += 1
+
     def __str__(self):
         string = 'LinkedList(['
         if self.head:
