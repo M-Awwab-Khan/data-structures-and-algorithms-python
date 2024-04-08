@@ -52,6 +52,16 @@ class LinkedList:
             new_node.next = current_node.next
             current_node.next = new_node
             self.size += 1
+    
+    def insert_after(self, prev_node, data) -> None:
+        if prev_node is None:
+            print("The given previous node must be in LinkedList.")
+            return
+
+        new_node = Node(data)
+        new_node.next = prev_node.next
+        prev_node.next = new_node
+        self.size += 1
 
     def delete_by_value(self, value) -> None:
         if not self.head:
