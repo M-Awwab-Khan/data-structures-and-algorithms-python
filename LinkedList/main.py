@@ -29,4 +29,9 @@ print(lst)
 
 lst.delete_by_position(1)
 print(lst)
+
+lst.append('hello')
+lst.append('world')
+print(lst.search(6))
+print(lst)
 print(len(lst))
