@@ -50,6 +50,30 @@ class LinkedList:
             current_node.next = new_node
             self.size += 1
 
+    def delete_by_value(self, value) -> None:
+        if not self.head:
+            print("LinkedList is empty. ")
+            return
+        current_node = self.head
+        if current_node.value == value:
+            self.head = self.head.next
+            if self.head == None:
+                self.tail = self.head
+            self.size -= 1
+            current_node.next = None
+            return
+        while current_node.next:
+            if current_node.next.value == value:
+                current_node.next = current_node.next.next
+                self.size -= 1
+                if current_node.next == None:
+                    self.tail = current_node.next
+                break
+            current_node = current_node.next
+        else:
+            print("Given value is not found. ")
+
+
     def __str__(self):
         string = 'LinkedList(['
         if self.head:
