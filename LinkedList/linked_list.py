@@ -73,6 +73,31 @@ class LinkedList:
         else:
             print("Given value is not found. ")
 
+    def delete_by_position(self, position) -> None:
+        if position >= self.size:
+            print("Position out of bound.")
+            return
+        if not self.head:
+            print("LinkedList is empty. ")
+            return
+        current_node = self.head
+        if position == 0:
+            self.head = self.head.next
+            if self.head == None:
+                self.tail = self.head
+            self.size -= 1
+            current_node.next = None
+            return
+
+        for i in range(position-1):
+            current_node = current_node.next
+        
+        current_node.next = current_node.next.next
+        if current_node.next == None:
+            self.tail = current_node.next
+        self.size -= 1
+
+
 
     def __str__(self):
         string = 'LinkedList(['
