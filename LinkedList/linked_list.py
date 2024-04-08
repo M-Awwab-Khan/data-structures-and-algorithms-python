@@ -9,6 +9,9 @@ class LinkedList:
     def __len__(self) -> int:
         return self.size
 
+    def is_empty(self) -> bool:
+        return self.head is None
+
     def append(self, data) -> None:
         new_node = Node(data)
         if self.head:
@@ -98,13 +101,24 @@ class LinkedList:
         self.size -= 1
 
 
+    def search(self, data) -> bool:
+        if self.is_empty():
+            return False
+        current_node = self.head
+
+        while current_node:
+            if current_node.value == data:
+                return True
+            
+            current_node = current_node.next
+        return False
 
     def __str__(self):
         string = 'LinkedList(['
         if self.head:
             current_node = self.head
             while current_node:
-                string += f"{current_node.value}, "
+                string += f"{current_node.value} -> "
                 current_node = current_node.next
 
         string += '])'
