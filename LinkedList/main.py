@@ -24,4 +24,9 @@ print(lst)
 lst.delete_by_value(0)
 print(lst)
 
+lst.delete_by_position(0)
+print(lst)
+
+lst.delete_by_position(1)
+print(lst)
 print(len(lst))
