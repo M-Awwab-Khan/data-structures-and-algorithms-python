@@ -70,7 +70,7 @@ class LinkedList:
                 current_node.next = current_node.next.next
                 self.size -= 1
                 if current_node.next == None:
-                    self.tail = current_node.next
+                    self.tail = current_node
                 break
             current_node = current_node.next
         else:
@@ -97,7 +97,7 @@ class LinkedList:
         
         current_node.next = current_node.next.next
         if current_node.next == None:
-            self.tail = current_node.next
+            self.tail = current_node
         self.size -= 1
 
 
