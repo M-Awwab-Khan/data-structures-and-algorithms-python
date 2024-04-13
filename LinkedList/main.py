@@ -38,3 +38,6 @@ print(len(lst))
 lst.sort()
 print(lst)
 print(len(lst))
+
+for node in lst:
+    print("In a loop", node.value, ":)")
