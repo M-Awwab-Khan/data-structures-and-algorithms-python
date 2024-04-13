@@ -109,6 +109,17 @@ class LinkedList:
             
             self.head = prev
 
+    def sort(self):
+        if self.size > 1:
+            current_node = self.head
+            while current_node:
+                next_ = current_node.next
+                while next_:
+                    if current_node.value > next_.value:
+                        current_node.value, next_.value = next_.value, current_node.value
+                    next_ = next_.next
+                current_node = current_node.next
+
     def __str__(self):
         string = 'LinkedList(['
         if self.head:
