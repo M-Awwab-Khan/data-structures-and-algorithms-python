@@ -99,6 +99,7 @@ class LinkedList:
 
     def reverse(self):
         if self.size > 1:
+            self.tail = self.head
             prev, current, next_ = None, self.head, self.head.next
             while current:
                 next_ = current.next
@@ -119,6 +120,12 @@ class LinkedList:
                         current_node.value, next_.value = next_.value, current_node.value
                     next_ = next_.next
                 current_node = current_node.next
+
+    def clear(self):
+        if self.head:
+            self.head = None
+            self.size = 0
+            self.tail = self.head
 
     def __str__(self):
         string = 'LinkedList(['
