@@ -34,3 +34,7 @@ print(len(lst))
 lst.reverse()
 print(lst)
 print(len(lst))
+
+lst.sort()
+print(lst)
+print(len(lst))
