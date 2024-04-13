@@ -97,15 +97,25 @@ class LinkedList:
             self.tail = current_node.next
         self.size -= 1
 
-
+    def reverse(self):
+        if self.size > 1:
+            prev, current, next_ = None, self.head, self.head.next
+            while current:
+                next_ = current.next
+                current.next = prev
+                prev = current
+                current = next_
+                
+            
+            self.head = prev
 
     def __str__(self):
         string = 'LinkedList(['
         if self.head:
             current_node = self.head
             while current_node:
-                string += f"{current_node.value}, "
+                string += f"{current_node.value} -> "
                 current_node = current_node.next
 
-        string += '])'
+        string += 'None])'
         return string
