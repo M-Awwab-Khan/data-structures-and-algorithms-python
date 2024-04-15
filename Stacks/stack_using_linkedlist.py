@@ -22,4 +22,13 @@ class Stack:
             self.top = new_node
         self.length += 1
 
+    def pop(self):
+        if self.top is None:
+            print("Stack is empty")
+        else:
+            self.top = self.top.next
+            self.length -= 1
+            if self.length == 0:
+                self.bottom = None
+
     
