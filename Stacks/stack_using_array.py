@@ -18,11 +18,20 @@ class Stack:
     def is_empty(self):
         return not bool(self.array)
     
+    def search(self, data):
+        if self.array:
+            for i, obj in enumerate(self.array[::-1]):
+                if obj == data:
+                    return i
+            return -1
+        else:
+            return 'Stack is empty'
+    
     def __str__(self):
         if self.array:
             res = ''
-            for element in self.array[::-1]:
-                res += f"{element}\n"
+            for obj in self.array[::-1]:
+                res += f"{obj}\n"
             return res
         return 'Stack is empty'
     
