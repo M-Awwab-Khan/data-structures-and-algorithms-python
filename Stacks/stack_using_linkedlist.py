@@ -31,6 +31,18 @@ class Stack:
             if self.length == 0:
                 self.bottom = None
 
+    def search(self, data):
+        if self.length == 0:
+            return 'Stack is empty'
+        current_node = self.top
+        i = 0
+        while current_node:
+            if current_node.data == data:
+                return i
+            i += 1
+            current_node = current_node.next
+        return -1
+
     def __str__(self) -> str:
         if self.length == 0:
             return 'Stack is empty'
