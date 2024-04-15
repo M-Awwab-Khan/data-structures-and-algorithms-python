@@ -2,7 +2,7 @@ class Stack:
     def __init__(self):
         self.array = []
 
-    def peak(self):
+    def peek(self):
         if self.array:
             return self.array[-1]
         return 'Stack is empty'
