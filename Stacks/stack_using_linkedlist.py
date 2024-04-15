@@ -31,4 +31,13 @@ class Stack:
             if self.length == 0:
                 self.bottom = None
 
+    def __str__(self) -> str:
+        if self.length == 0:
+            return 'Stack is empty'
+        current_node = self.top
+        res = ''
+        while current_node:
+            res += f"{current_node.data}\n"
+            current_node = current_node.next
+        return res
     
