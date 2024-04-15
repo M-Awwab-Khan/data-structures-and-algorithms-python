@@ -1,4 +1,5 @@
-from stack_using_array import Stack
+# from stack_using_array import Stack
+from stack_using_linkedlist import Stack
 
 stack = Stack()
 
@@ -12,6 +13,6 @@ print(stack)
 stack.pop()
 
 print(stack)
-print(stack.peak())
+print(stack.peek())
 
 print('element is found at index: ', stack.search(2))
