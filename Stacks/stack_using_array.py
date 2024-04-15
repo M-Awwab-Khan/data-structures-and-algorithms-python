@@ -15,5 +15,13 @@ class Stack:
             self.array.pop()
         return 'Stack is empty'
     
+    def __str__(self):
+        if self.array:
+            res = ''
+            for element in self.array[::-1]:
+                res += f"{element}\n"
+            return res
+        return 'Stack is empty'
+    
 
     
