@@ -11,6 +11,15 @@ class Stack:
             return None
         return self.top.data
     
-    
+    def push(self, data):
+        new_node = Node(data)
+
+        if self.top is None:
+            self.top = new_node
+            self.bottom = new_node
+        else:
+            new_node.next = self.top
+            self.top = new_node
+        self.length += 1
 
     
