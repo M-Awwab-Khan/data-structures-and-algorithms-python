@@ -22,3 +22,15 @@ class Queue:
         self.s1.append(data)
         for i in range(len(self.s2)):
             self.s1.append(self.s2.pop())
+
+
+    def __str__(self):
+        if len(self.s1) == 0:
+            return "Queue is Empty"
+
+        res = ''
+        for i in range(len(self.s1) - 1,0,-1):
+            res += f'{self.s1[i]} <<-- '
+        res += str(self.s1[0])
+
+        return res
