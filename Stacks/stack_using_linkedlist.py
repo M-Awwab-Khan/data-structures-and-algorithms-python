@@ -43,6 +43,9 @@ class Stack:
             current_node = current_node.next
         return -1
 
+    def is_empty(self):
+        return self.top is None
+
     def __str__(self) -> str:
         if self.length == 0:
             return 'Stack is empty'
