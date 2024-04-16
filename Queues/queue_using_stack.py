@@ -24,6 +24,13 @@ class Queue:
             self.s1.append(self.s2.pop())
 
 
+    def dequeue(self):
+        if self.s1:
+            return self.s1.pop()
+
+        else:
+            return 'Queue is Empty'
+
     def __str__(self):
         if len(self.s1) == 0:
             return "Queue is Empty"
