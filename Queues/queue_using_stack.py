@@ -16,6 +16,12 @@ class Queue:
         self.s1 = []
         self.s2 = []
 
+    def peek(self):
+        if self.s1:
+            return self.s1[-1]
+        else:
+            return 'Queue is Empty'
+
     def enqueue(self, data):
         for i in range(len(self.s1)):
             self.s2.append(self.s1.pop())
