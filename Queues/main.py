@@ -10,3 +10,5 @@ print(queue)
 
 queue.dequeue()
 print(queue)
+
+print(queue.peek())
