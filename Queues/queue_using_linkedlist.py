@@ -43,3 +43,18 @@ class Queue:
             self.last = None
         self.first = self.first.next
         self.length -= 1
+
+    def __str__(self):
+        if self.length == 0:
+            return "Queue is Empty"
+        else:
+            res = ''
+            current_pointer = self.first
+            while(current_pointer!= None):
+                if current_pointer.next == None:
+                    res += str(current_pointer.data)
+                else:
+                    res += f'{current_pointer.data}  <<--  '
+                current_pointer = current_pointer.next
+            return res
+
