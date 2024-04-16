@@ -7,3 +7,6 @@ for i in range(2, 11, 2):
 
 
 print(queue)
+
+queue.dequeue()
+print(queue)
