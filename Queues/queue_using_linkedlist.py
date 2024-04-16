@@ -11,6 +11,7 @@
 #Enqueue - O(1)
 #Dequeue - O(1)
 
+from node import Node
 class Queue:
     #The 'first' pointer will always point to the front of the queue, the element which is to be removed next that is
     #The 'last' pointer will always point to the end of the queue, i.e., the element which has last been entered
@@ -21,3 +22,24 @@ class Queue:
 
     def peek(self):
         return self.first.data
+
+
+    def enqueue(self, data):
+        new_node = Node(data)
+        if self.last is None:
+            self.last = new_node
+            self.first = new_node
+        
+        else:
+            new_node.next = self.last
+            self.last = new_node
+        self.length += 1
+
+    def dequeue(self):
+        if self.last is None:
+            return 'Queue is Empty'
+    
+        if self.length == 1:
+            self.last = None
+        self.first = self.first.next
+        self.length -= 1
