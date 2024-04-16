@@ -21,6 +21,8 @@ class Queue:
         self.length = 0
 
     def peek(self):
+        if self.length == 0:
+            return 'Queue is Empty'
         return self.first.data
 
 
@@ -31,7 +33,7 @@ class Queue:
             self.first = new_node
         
         else:
-            new_node.next = self.last
+            self.last.next = new_node
             self.last = new_node
         self.length += 1
 
