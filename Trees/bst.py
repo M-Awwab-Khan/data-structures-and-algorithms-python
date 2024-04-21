@@ -28,6 +28,23 @@ class BinarySearchTree:
                         current_node = current_node.left
             self.number_of_nodes += 1
             return
+        
+    def search(self, data):
+
+        if self.root is None:
+            return 'Tree is empty'
+        else:
+            current_node = self.root
+            while current_node:
+                if current_node.data == data:
+                    return 'Value found in the tree'
+                elif data > current_node.data:
+                    current_node = current_node.right
+                elif data < current_node.data:
+                    current_node = current_node.left
+            return 'Value not found in the tree'
+
+
     
     def inorder(self):
 
