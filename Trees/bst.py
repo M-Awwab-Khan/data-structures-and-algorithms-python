@@ -38,6 +38,20 @@ class BinarySearchTree:
                 _inorder(curr.right)
 
         _inorder(self.root)
+        print()
+
+    def preorder(self):
+
+        def _preorder(curr):
+            if curr:
+                print(f"{curr.data} -> ", end=' ')
+                _preorder(curr.left)
+                _preorder(curr.right)
+
+        _preorder(self.root)
+        print()
+
+
 
 
 
