@@ -17,3 +17,6 @@ my_bst.preorder()
 
 print('Post order traversal: ', end= ' ')
 my_bst.postorder()
+
+print(my_bst.search(10))
+print(my_bst.search(11))
