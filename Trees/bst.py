@@ -28,6 +28,16 @@ class BinarySearchTree:
                         current_node = current_node.left
             self.number_of_nodes += 1
             return
+    
+    def inorder(self):
+
+        def _inorder(self, curr):
+            if curr:
+                self.inorder(curr.left)
+                print(f"{curr.data} -> ", end=' ')
+                self.inorder(curr.right)
+
+        _inorder(self.root)
 
 
 
