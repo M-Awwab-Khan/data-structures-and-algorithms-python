@@ -14,3 +14,6 @@ my_bst.inorder()
 
 print('Pre order traversal: ', end= ' ')
 my_bst.preorder()
+
+print('Post order traversal: ', end= ' ')
+my_bst.postorder()
