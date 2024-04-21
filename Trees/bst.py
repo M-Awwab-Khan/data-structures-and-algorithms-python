@@ -51,7 +51,16 @@ class BinarySearchTree:
         _preorder(self.root)
         print()
 
+    def postorder(self):
 
+        def _postorder(curr):
+            if curr:
+                _postorder(curr.left)
+                _postorder(curr.right)
+                print(f"{curr.data} -> ", end=' ')
+
+        _postorder(self.root)
+        print()
 
 
 
