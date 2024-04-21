@@ -31,11 +31,11 @@ class BinarySearchTree:
     
     def inorder(self):
 
-        def _inorder(self, curr):
+        def _inorder(curr):
             if curr:
-                self.inorder(curr.left)
+                _inorder(curr.left)
                 print(f"{curr.data} -> ", end=' ')
-                self.inorder(curr.right)
+                _inorder(curr.right)
 
         _inorder(self.root)
 
