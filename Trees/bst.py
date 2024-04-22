@@ -43,6 +43,89 @@ class BinarySearchTree:
                 elif data < current_node.data:
                     current_node = current_node.left
             return 'Value not found in the tree'
+        
+    def delete(self, data):
+        if self.root is None:
+            return 'Tree is Empty'
+        else:
+            current_node = self.root
+            parent_node = None
+            while current_node:
+                if data > current_node.data:
+                    parent_node = current_node
+                    current_node = current_node.right
+                elif data < current_node.data:
+                    parent_node = current_node
+                    current_node = current_node.left
+                else:
+                    # current node has no child
+                    if current_node.left == None and current_node.right == None:
+                        if parent_node == None:
+                            self.root = None
+                            self.number_of_nodes -= 1
+                            return
+                        elif parent_node.left.data == data:
+                            parent_node.left = None
+                            self.number_of_nodes -= 1
+                            return
+                        else:
+                            parent_node.right = None
+                            self.number_of_nodes -= 1
+                            return
+                    # current node has one child
+                    elif (current_node.left == None) ^ (current_node.right == None):
+                        if parent_node == None:
+                            if current_node.left:
+                                self.root = current_node.left
+                                self.number_of_nodes -= 1
+                                return
+                            else:
+                                self.root = current_node.right
+                                self.number_of_nodes -= 1
+                                return
+                        elif parent_node.left.data == data:
+                            if current_node.left:
+                                parent_node.left = current_node.left
+                                current_node.left = None
+                                self.number_of_nodes -= 1
+                                return
+                            else:
+                                parent_node.left = current_node.right
+                                current_node.right = None
+                                self.number_of_nodes -= 1
+                                return
+                        else:
+                            if current_node.left:
+                                parent_node.right = current_node.left
+                                current_node.left = None
+                                self.number_of_nodes -= 1
+                                return
+                            else:
+                                parent_node.right = current_node.right
+                                current_node.right = None
+                                self.number_of_nodes -= 1
+                                return
+                    # current node has 2 children
+                    else:
+                        successor_parent = current_node
+                        successor = current_node.right
+                        while successor.left:
+                            successor_parent = successor
+                            successor = successor.left
+                        if successor.right == None:
+                            current_node.data = successor.data
+                            successor_parent.left = None # change to right wtf not working
+                            self.number_of_nodes -= 1
+                            return
+                        else:
+                            current_node.data = successor.data
+                            if successor.right.data > successor_parent.data:
+                                successor_parent.right = successor.right
+                            else:
+                                successor_parent.left = successor.right
+                            self.number_of_nodes -= 1
+                            return
+        return 'Not Found'
 
 
     

@@ -20,3 +20,15 @@ my_bst.postorder()
 
 print(my_bst.search(10))
 print(my_bst.search(11))
+
+my_bst.delete(13)
+my_bst.inorder()
+
+my_bst.delete(5)
+my_bst.inorder()
+
+my_bst.delete(3)
+my_bst.inorder()
+
+my_bst.delete(7)
+my_bst.inorder()
