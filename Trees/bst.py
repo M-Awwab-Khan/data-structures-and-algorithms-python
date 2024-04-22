@@ -114,12 +114,15 @@ class BinarySearchTree:
                             successor = successor.left
                         if successor.right == None:
                             current_node.data = successor.data
-                            successor_parent.right = None
+                            successor_parent.left = None # change to right wtf not working
                             self.number_of_nodes -= 1
                             return
                         else:
                             current_node.data = successor.data
-                            successor_parent.left = successor.right
+                            if successor.right.data > successor_parent.data:
+                                successor_parent.right = successor.right
+                            else:
+                                successor_parent.left = successor.right
                             self.number_of_nodes -= 1
                             return
         return 'Not Found'
