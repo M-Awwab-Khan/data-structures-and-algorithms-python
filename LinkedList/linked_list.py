@@ -110,6 +110,18 @@ class LinkedList:
             self.tail = current_node
         self.size -= 1
 
+    def reverse(self):
+        if self.size > 1:
+            self.tail = self.head
+            prev, current, next_ = None, self.head, self.head.next
+            while current:
+                next_ = current.next
+                current.next = prev
+                prev = current
+                current = next_
+                
+            
+            self.head = prev
 
     def search(self, data) -> bool:
         if self.is_empty():
@@ -131,5 +143,5 @@ class LinkedList:
                 string += f"{current_node.value} -> "
                 current_node = current_node.next
 
-        string += '])'
+        string += 'None])'
         return string
