@@ -114,7 +114,7 @@ class BinarySearchTree:
                             successor = successor.left
                         if successor.right == None:
                             current_node.data = successor.data
-                            successor_parent.left = None
+                            successor_parent.right = None
                             self.number_of_nodes -= 1
                             return
                         else:
