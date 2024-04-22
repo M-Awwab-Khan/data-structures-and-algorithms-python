@@ -33,6 +33,15 @@ print(len(lst))
 
 lst.reverse()
 print(lst)
+
+lst.append('hello')
+lst.append('world')
+print(lst.search(6))
+print(lst)
+lst.delete_by_value('world')
+print(lst)
+lst.insert_after(lst.tail, 'awwab')
+print(lst)
 print(len(lst))
 
 lst.sort()

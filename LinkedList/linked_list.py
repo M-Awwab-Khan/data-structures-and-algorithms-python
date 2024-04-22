@@ -9,6 +9,9 @@ class LinkedList:
     def __len__(self) -> int:
         return self.size
 
+    def is_empty(self) -> bool:
+        return self.head is None
+
     def append(self, data) -> None:
         new_node = Node(data)
         if self.head:
@@ -49,6 +52,16 @@ class LinkedList:
             new_node.next = current_node.next
             current_node.next = new_node
             self.size += 1
+    
+    def insert_after(self, prev_node, data) -> None:
+        if prev_node is None:
+            print("The given previous node must be in LinkedList.")
+            return
+
+        new_node = Node(data)
+        new_node.next = prev_node.next
+        prev_node.next = new_node
+        self.size += 1
 
     def delete_by_value(self, value) -> None:
         if not self.head:
@@ -67,7 +80,7 @@ class LinkedList:
                 current_node.next = current_node.next.next
                 self.size -= 1
                 if current_node.next == None:
-                    self.tail = current_node.next
+                    self.tail = current_node
                 break
             current_node = current_node.next
         else:
@@ -94,7 +107,7 @@ class LinkedList:
         
         current_node.next = current_node.next.next
         if current_node.next == None:
-            self.tail = current_node.next
+            self.tail = current_node
         self.size -= 1
 
     def reverse(self):
@@ -110,28 +123,17 @@ class LinkedList:
             
             self.head = prev
 
-    def sort(self):
-        if self.size > 1:
-            current_node = self.head
-            while current_node:
-                next_ = current_node.next
-                while next_:
-                    if current_node.value > next_.value:
-                        current_node.value, next_.value = next_.value, current_node.value
-                    next_ = next_.next
-                current_node = current_node.next
-
-    def clear(self):
-        if self.head:
-            self.head = None
-            self.size = 0
-            self.tail = self.head
-
-    def __iter__(self):
+    def search(self, data) -> bool:
+        if self.is_empty():
+            return False
         current_node = self.head
+
         while current_node:
-            yield current_node
+            if current_node.value == data:
+                return True
+            
             current_node = current_node.next
+        return False
 
     def __str__(self):
         string = 'LinkedList(['
